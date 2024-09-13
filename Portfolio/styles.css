@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media.giphy.com/media/N3yLGQ1oMYfGU/giphy.gif') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Ensure the background stays behind the content */
+}
+
+.full-screen-background {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem; /* Padding for small screens */
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 48px; /* Larger font size to make the name prominent */
+    color: var(--highlight-color); /* Highlight color for headings */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(41, 33, 33, 0.979); /* Add shadow for better readability */
+}
+
+header p {
+    font-size: 18px; /* Slightly larger font size for subtitle */
+    margin: 10px 0; /* Add spacing between the name and role */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white color for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0; /* Add margin for spacing */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 0.5rem; /* Reduced margin for navigation items */
+    font-size: 14px; /* Adjust font size for navigation links */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white color for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+/* Content area below the background */
+.main-content {
+    width: 100%; /* Full width */
+    margin: 20px auto; /* Center the content with margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.project-item {
+    width: 100%; /* Ensure responsiveness */
+    max-width: 1200px; /* Limit max width of the section */
+    margin: 0 auto; /* Center the project item */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Distribute space between items */
+    flex-wrap: wrap; /* Allow items to wrap if there's not enough space */
+    text-align: center;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column; /* Arrange image and paragraph vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 45%; /* Limit width of each project content block */
+    margin: 10px; /* Space between blocks */
+}
+
+.botany-image, .artist-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 300px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.4s ease-in-out; /* Smooth zoom effect */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: Add shadow */
+    margin-bottom: 10px; /* Space below each image */
+}
+
+.botany-image:hover, .artist-image:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.project-content p {
+    font-size: 16px; /* Adjust size for readability */
+    color: #E0E0E0; /* Light gray for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Shadow for better readability */
+    margin-top: 10px; /* Space between the image and description */
+}
+
+section {
+    padding: 30px; /* Add more padding for better spacing inside sections */
+    border-radius: 8px;
+    box-shadow: none; /* Remove the shadow for a clean transparent look */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background for better contrast */
+    margin-bottom: 40px; /* More space between sections */
+    width: 90%; /* Take 90% of the viewport width */
+    max-width: 800px; /* Set max-width for readability */
+    text-align: center; /* Center text within the section */
+}
+
+section h3, section h4 {
+    font-size: 24px; /* Consistent font size for section titles */
+    color: #FFFFFF; /* White color for better contrast */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+}
+
+section p {
+    font-size: 16px; /* Slightly larger for better readability */
+    color: #E0E0E0; /* Light gray color for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: transparent; /* Fully transparent footer */
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 12px; /* Smaller font size for the footer */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white color for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px; /* Adjust font size for smaller screens */
+    }
+
+    header p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    section h3, section h4 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    section p {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .main-content {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+}
